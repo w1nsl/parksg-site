@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ParkSG Privacy</title><meta name="description" content="How the ParkSG iPhone app handles your data."><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<header><div class="mark">P</div><a href="./">ParkSG</a></header>
+<h1>Privacy policy</h1>
+<p class="muted">Effective 9 November 2026</p>
+<p>ParkSG is made by an independent developer in Singapore ("we"). It has no accounts, no ads and no tracking, and we never sell data. Most of what ParkSG knows about you stays on your iPhone. This page explains exactly what leaves it.</p>
+
+<h2>Stays on your iPhone</h2>
+<ul>
+<li>Your location and motion activity, used to notice when you park and drive off.</li>
+<li>Your parking history, notes, fares and the carparks you mark as "No charge here".</li>
+<li>The name of your car's Bluetooth or CarPlay, used to tell your own car from a taxi.</li>
+</ul>
+<p>Deleting the app deletes all of this.</p>
+
+<h2>Sent to our server</h2>
+<p>Our server runs on Supabase in Singapore (AWS ap-southeast-1).</p>
+<table>
+<thead><tr><th>What</th><th>Why</th><th>How long</th></tr></thead>
+<tbody>
+<tr><td>IDs of carparks shown on your map</td><td>To fetch live lots and mall rates</td><td>Not stored; may appear briefly in server logs, kept a few days at most</td></tr>
+<tr><td>Your approximate location (rounded to about 1 km) when you drive off</td><td>To list ERP charges nearby</td><td>Not stored; may appear briefly in server logs, kept a few days at most</td></tr>
+<tr><td>While a Lock Screen timer runs: Apple's push token for it, a random code made on your phone (stored only in hashed form), the carpark name, start time and upcoming fares</td><td>To keep the fare on your Lock Screen up to date while the app is closed</td><td>Deleted when parking ends, and in any case within 13 hours</td></tr>
+<tr><td>Rate corrections you send: your text, the carpark, the app version and your iPhone's vendor identifier for this app</td><td>To review and fix rates, and to filter spam</td><td>Until reviewed, then deleted within 90 days</td></tr>
+</tbody></table>
+<p>None of this is linked to your name, email or Apple ID.</p>
+
+<h2>Other services</h2>
+<ul>
+<li><b>Apple</b> delivers Lock Screen updates and notifications (Apple Push Notification service), and shows maps (MapKit) under Apple's own privacy policy.</li>
+<li><b>Supabase</b> hosts our server and database, and processes data only on our behalf.</li>
+<li>Carpark and ERP data comes from data.gov.sg and LTA DataMall. ParkSG sends them nothing about you; our server fetches the data.</li>
+</ul>
+
+<h2>Your choices</h2>
+<ul>
+<li>Turn off parking detection or the Lock Screen timer in ParkSG's Settings.</li>
+<li>Change location, motion and notification access in the iPhone Settings app at any time. The map works without them.</li>
+<li>To ask what we hold or to delete a rate correction you sent, email <a href="mailto:parksg.app@gmail.com">parksg.app@gmail.com</a>. We reply within 30 days, as required by Singapore's Personal Data Protection Act.</li>
+</ul>
+
+<h2>Children</h2>
+<p>ParkSG is meant for drivers and is not directed at children under 13.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, we will update this page and its date. If ParkSG starts collecting something new, we will say so in the app first.</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:parksg.app@gmail.com">parksg.app@gmail.com</a></p>
+<nav><a href="./">Home</a><a href="support.html">Help &amp; support</a></nav>
+</main></body></html>
