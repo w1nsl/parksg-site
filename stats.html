@@ -15,7 +15,7 @@ h2{font-size:15px;margin:0 0 12px;font-weight:600}
 .muted{color:var(--muted);font-size:13px}
 button,select,input{font:inherit;color:inherit}
 select,button{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 10px;cursor:pointer}
-.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:12px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(128px,1fr));margin-bottom:12px}
 .cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0}
 .kpi .v{font-size:28px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.1}
@@ -231,7 +231,12 @@ function render(d) {
   bars("errors", d.errors || {});
   const rows = d.retention || [];
   $("retention").innerHTML = rows.length ? `<table><thead><tr><th>Week of</th><th>New installs</th><th>Day 1</th><th>Days 7–13</th><th>Days 30–59</th></tr></thead><tbody>${
-    rows.map(r => `<tr><td>${new Date(r.week).toLocaleDateString("en-SG", { day: "numeric", month: "short" })}</td><td>${fmt(r.size)}</td><td>${pct(r.d1, r.size)}</td><td>${pct(r.d7, r.size)}</td><td>${pct(r.d30, r.size)}</td></tr>`).join("")
+    rows.map(r => {
+      // A window only counts once every install that week has reached it; until then show "–".
+      const age = (new Date(d.generated_at) - new Date(r.week)) / 86400000;
+      const cell = (n, from) => age >= 7 + from ? pct(n, r.size) : "–";
+      return `<tr><td>${new Date(r.week).toLocaleDateString("en-SG", { day: "numeric", month: "short" })}</td><td>${fmt(r.size)}</td><td>${cell(r.d1, 1)}</td><td>${cell(r.d7, 13)}</td><td>${cell(r.d30, 59)}</td></tr>`;
+    }).join("")
   }</tbody></table>` : `<div class="muted">No installs yet.</div>`;
 }
 
