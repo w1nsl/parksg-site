@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Connect your car to ParkSG</title><meta name="description" content="Step-by-step guide: set up two Shortcuts automations so ParkSG knows when you park and when you drive off."><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<header><div class="mark">P</div><a href="./">ParkSG</a></header>
+<h1>Connect your car</h1>
+<p>ParkSG starts your parking timer when your iPhone disconnects from your car's Bluetooth, and ends it when it connects again. You set this up once in Apple's Shortcuts app with two automations. It takes about two minutes.</p>
+<div class="card">
+<strong>Before you start</strong>
+<ul>
+<li>Your iPhone is already paired with your car's Bluetooth (the car shows up in Settings › Bluetooth).</li>
+<li>ParkSG is installed and you have opened it once.</li>
+<li>The Shortcuts app is on your iPhone. If you removed it, get it again from the App Store.</li>
+</ul>
+</div>
+<p class="muted">Screens are from iOS 27. On older versions the wording differs slightly; see the notes at the end.</p>
+
+<h2>Automation 1: when you park</h2>
+<ol class="steps">
+<li><h3>Open Shortcuts and tap Automation</h3>
+<p>If Shortcuts opens on another screen, tap back until you see Library.</p>
+<img src="img/setup/01-library.png" alt="Shortcuts Library with the Automation row highlighted" width="720" height="782" loading="lazy"></li>
+<li><h3>Tap + at the bottom</h3>
+<img src="img/setup/02-plus.png" alt="The plus button at the bottom of the Automation screen" width="720" height="521" loading="lazy"></li>
+<li><h3>If you see "Describe a Shortcut", tap Edit</h3>
+<p>This skips the describe screen and opens the editor. If you land in the editor straight away, carry on.</p>
+<img src="img/setup/03-edit.png" alt="Describe a Shortcut screen with the Edit button highlighted" width="720" height="794" loading="lazy"></li>
+<li><h3>Tap the Automation chip, then Bluetooth</h3>
+<p>The chips sit under the Search field at the bottom. Bluetooth is under Connectivity.</p>
+<img src="img/setup/04-bluetooth.png" alt="Trigger list with Bluetooth highlighted under Connectivity" width="720" height="1045" loading="lazy"></li>
+<li><h3>Tap Any Device and pick your car</h3>
+<p>You get a card that reads "When Any Device is Connected". Tap <strong>Any Device</strong>, choose your car from the list, then tap the blue tick.</p>
+<img src="img/setup/05-trigger.png" alt="Trigger card: When Any Device is Connected" width="720" height="490" loading="lazy">
+<img src="img/setup/06-devices.png" alt="Devices list with a tick to confirm" width="720" height="388" loading="lazy">
+<p class="muted">Your car's name appears in this list on your iPhone. Pick it, so headphones and speakers don't start a parking session.</p></li>
+<li><h3>Tap Connected and change it to Disconnected</h3>
+<img src="img/setup/07-menu.png" alt="Menu with Connected, Disconnected, Connected or Disconnected" width="720" height="716" loading="lazy"></li>
+<li><h3>Leave Confirm Before Run off</h3>
+<p>Tap the small arrow next to Disconnected to check. <strong>Automation</strong> should be on and <strong>Confirm Before Run</strong> off, so it runs by itself.</p>
+<img src="img/setup/08-options.png" alt="Automation on, Confirm Before Run off" width="720" height="597" loading="lazy"></li>
+<li><h3>Search for ParkSG and choose "Car disconnected (I parked)"</h3>
+<p>Tap the Search field at the bottom and type ParkSG.</p>
+<img src="img/setup/09-search.png" alt="Search results with Car disconnected (I parked) highlighted" width="720" height="663" loading="lazy"></li>
+<li><h3>Tap back to save</h3>
+<p>The automation should look like this. There is no Save button; tapping the back arrow keeps it.</p>
+<img src="img/setup/10-parked.png" alt="Finished automation: When your car is Disconnected, Car disconnected (I parked)" width="720" height="752" loading="lazy"></li>
+</ol>
+
+<h2>Automation 2: when you leave</h2>
+<ol class="steps">
+<li><h3>Tap + again and repeat steps 3 to 5</h3>
+<p>Edit, Automation chip, Bluetooth, then pick your car.</p></li>
+<li><h3>Leave it on Connected</h3>
+<p>This time don't change the state.</p></li>
+<li><h3>Search for ParkSG and choose "Car connected (I'm leaving)"</h3>
+<img src="img/setup/11-leaving.png" alt="Finished automation: When your car is Connected, Car connected (I'm leaving)" width="720" height="573" loading="lazy"></li>
+<li><h3>Tap back. You should now have two automations</h3>
+<p>Both switches should be green. Your car's name shows in place of "any Bluetooth device".</p>
+<img src="img/setup/12-both.png" alt="Automation list with both ParkSG automations switched on" width="720" height="881" loading="lazy"></li>
+</ol>
+
+<h2>Check it works</h2>
+<p>Take a short drive and park at any public carpark. When you switch the car off, your Lock Screen should ask "Parked?" within a minute. When you get back in and the phone connects, the session ends with the fare.</p>
+<p>In ParkSG, open Settings. <strong>Car automation</strong> shows when each automation last ran.</p>
+
+<h2>If it doesn't run</h2>
+<ul>
+<li><strong>Shortcuts asks before running.</strong> Open the automation, tap the arrow next to Connected or Disconnected, and turn off Confirm Before Run.</li>
+<li><strong>Nothing happens.</strong> Check both switches in the Automation list are green, and that ParkSG has location set to Always in the iPhone Settings app.</li>
+<li><strong>It starts when headphones disconnect.</strong> Open the automation, tap Any Device and pick only your car.</li>
+<li><strong>Your car keeps Bluetooth on after the engine stops.</strong> Some cars hold the connection until you open the door or lock up. The timer starts then. You can adjust the start time on the parking card.</li>
+<li><strong>Older iOS (17, 18, 26).</strong> Start from the Automation tab at the bottom of Shortcuts, tap +, choose Bluetooth, pick your car and "Is Disconnected", choose <strong>Run Immediately</strong>, then add the ParkSG action.</li>
+</ul>
+<p class="note">No car Bluetooth? You can still tap "I've parked here" on a carpark's page in ParkSG, or turn on "Detect without the automation" in ParkSG's Settings to try motion-based detection.</p>
+
+<nav><a href="./">Home</a><a href="support.html">Help &amp; support</a><a href="privacy.html">Privacy policy</a></nav>
+</main></body></html>
