@@ -10,7 +10,7 @@
 <h2>Stays on your iPhone</h2>
 <ul>
 <li>Your location, used to find the carpark when you park. Motion activity is used only if you turn on "Detect without the automation".</li>
-<li>Your parking history, notes, fares and the carparks you mark as "No charge here".</li>
+<li>Your current parking session, its note and fare, your Home location and the carparks you mark as "No charge here". ParkSG keeps no parking history: a session is deleted within 15 minutes of ending.</li>
 <li>The name of your car's Bluetooth or CarPlay, used to tell your own car from a taxi.</li>
 </ul>
 <p>Deleting the app deletes all of this.</p>
@@ -25,6 +25,7 @@
 <tr><td>While a Lock Screen timer runs: Apple's push token for it, a random code made on your phone (stored only in hashed form), the carpark name, start time and upcoming fares</td><td>To keep the fare on your Lock Screen up to date while the app is closed</td><td>Deleted when parking ends, and in any case within 13 hours</td></tr>
 <tr><td>Anonymous usage events: which features are used (for example a search, opening a carpark, answering "Parked?" or how a parking session ended), each with a fixed word or two, a random code made on your phone and the app version. Never your location, carparks, notes or anything you type</td><td>To see how ParkSG is used and whether parking detection guesses right, so we can improve it</td><td>400 days. Turn it off any time in ParkSG Settings → "Share anonymous usage"</td></tr>
 <tr><td>Rate corrections you send: your text, the carpark, the app version and your iPhone's vendor identifier for this app</td><td>To review and fix rates, and to filter spam</td><td>Until reviewed, then deleted within 90 days</td></tr>
+<tr><td>"Carpark missing?" reports you send: the carpark's name, your text, the app version, your iPhone's vendor identifier for this app, and a position for the carpark. That position is your current location only if you leave "I'm at this carpark now" switched on; otherwise it is the middle of the map</td><td>To add the carpark and its rates, and to filter spam</td><td>Until reviewed, then deleted within 90 days</td></tr>
 </tbody></table>
 <p>None of this is linked to your name, email or Apple ID.</p>
 
@@ -40,7 +41,7 @@
 <ul>
 <li>Turn off parking detection or the Lock Screen timer in ParkSG's Settings.</li>
 <li>Change location, motion and notification access in the iPhone Settings app at any time. The map works without them.</li>
-<li>To ask what we hold or to delete a rate correction you sent, email <a href="mailto:parksg.app@gmail.com">parksg.app@gmail.com</a>. We reply within 30 days, as required by Singapore's Personal Data Protection Act.</li>
+<li>To ask what we hold or to delete a rate correction or carpark report you sent, email <a href="mailto:parksg.app@gmail.com">parksg.app@gmail.com</a>. We reply within 30 days, as required by Singapore's Personal Data Protection Act.</li>
 </ul>
 
 <h2>Children</h2>

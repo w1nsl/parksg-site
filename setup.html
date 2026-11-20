@@ -41,8 +41,10 @@
 <li><h3>Search for ParkSG and choose "Car disconnected (I parked)"</h3>
 <p>Tap the Search field at the bottom and type ParkSG.</p>
 <img src="img/setup/09-search.png" alt="Search results with Car disconnected (I parked) highlighted" width="720" height="663" loading="lazy"></li>
+<li><h3>Set Location to Current Location</h3>
+<p>On the ParkSG action, tap <strong>Location</strong> and choose <strong>Current Location</strong>. Shortcuts then tells ParkSG where you parked, so ParkSG only needs location set to While Using the App. If Shortcuts asks to use your location, allow it.</p></li>
 <li><h3>Tap back to save</h3>
-<p>The automation should look like this. There is no Save button; tapping the back arrow keeps it.</p>
+<p>The automation should look like this. Your ParkSG action will also show Current Location, which this picture predates. There is no Save button; tapping the back arrow keeps it.</p>
 <img src="img/setup/10-parked.png" alt="Finished automation: When your car is Disconnected, Car disconnected (I parked)" width="720" height="752" loading="lazy"></li>
 </ol>
 
@@ -66,7 +68,8 @@
 <h2>If it doesn't run</h2>
 <ul>
 <li><strong>Shortcuts asks before running.</strong> Open the automation, tap the arrow next to Connected or Disconnected, and turn off Confirm Before Run.</li>
-<li><strong>Nothing happens.</strong> Check both switches in the Automation list are green, and that ParkSG has location set to Always in the iPhone Settings app.</li>
+<li><strong>Nothing happens.</strong> Check both switches in the Automation list are green, and that the parked automation has Location set to Current Location. If you skipped that step, ParkSG needs location set to Always in the iPhone Settings app. In ParkSG, Settings › Car automation › Recent runs shows what happened on each run.</li>
+<li><strong>There is no Location field on the action.</strong> Update ParkSG, then delete the ParkSG action from the automation and add it again.</li>
 <li><strong>It starts when headphones disconnect.</strong> Open the automation, tap Any Device and pick only your car.</li>
 <li><strong>Your car keeps Bluetooth on after the engine stops.</strong> Some cars hold the connection until you open the door or lock up. The timer starts then. You can adjust the start time on the parking card.</li>
 <li><strong>Older iOS (17, 18, 26).</strong> Start from the Automation tab at the bottom of Shortcuts, tap +, choose Bluetooth, pick your car and "Is Disconnected", choose <strong>Run Immediately</strong>, then add the ParkSG action.</li>
