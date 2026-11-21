@@ -15,15 +15,52 @@
 </div>
 <p class="muted">Screens are from iOS 27. On older versions the wording differs slightly; see the notes at the end.</p>
 
-<h2>First: add the two shortcuts</h2>
-<p>These are ready-made. Each holds one ParkSG action and nothing else; the parked one already has Location set to Current Location, which is how ParkSG knows where you parked with location set to While Using the App.</p>
+<h2>The short version</h2>
+<p><a class="button" href="https://www.icloud.com/shortcuts/0891f797d46d455292a2072527ceced1">Add "Car disconnected (I parked)"</a> <a class="button" href="https://www.icloud.com/shortcuts/4282558258d04bdb8eb7ab5bfdafeb1b">Add "Car Connect"</a></p>
+<ol>
+<li>On your iPhone, tap each link above and tap <strong>Add Shortcut</strong>. Each one brings its automation with it, switched off.</li>
+<li>In Shortcuts, tap <strong>Automation</strong>. Tap each of the two, tap <strong>Edit</strong>, tap the car's name (14AHU) and pick your own car. Go back and switch it on.</li>
+<li>Tap each of the two shortcuts once to run it and choose <strong>Allow</strong>. iOS asks only this first time.</li>
+</ol>
+<p class="note">The automations arrive set to the car they were made with, so they do nothing until you pick yours.</p>
+
+<details>
+<summary>Step by step with pictures</summary>
+
+<h2>1. Add the two shortcuts</h2>
 <p><a class="button" href="https://www.icloud.com/shortcuts/0891f797d46d455292a2072527ceced1">Add "Car disconnected (I parked)"</a> <a class="button" href="https://www.icloud.com/shortcuts/4282558258d04bdb8eb7ab5bfdafeb1b">Add "Car Connect"</a></p>
 <ol class="steps">
 <li><h3>Tap each link, then Add Shortcut</h3>
 <p>Open this page on your iPhone. Each link opens the Shortcuts app.</p>
 <img src="img/setup/20-add-shortcut.png" alt="Shortcuts showing Car disconnected (I parked) with the Add Shortcut button ringed" width="720" height="775" loading="lazy"></li>
-<li><h3>Run each one once</h3>
-<p>In Shortcuts, tap each of the two tiles. iOS asks its permission questions only on the first run. Answer them now, or the automation stops to ask while you are walking away from the car.</p>
+</ol>
+
+<h2>2. Point them at your car and switch on</h2>
+<ol class="steps">
+<li><h3>Open Automation</h3>
+<p>In Shortcuts, go back to Library and tap Automation.</p>
+<img src="img/setup/24-library.png" alt="Shortcuts Library with the Automation row ringed" width="720" height="638" loading="lazy"></li>
+<li><h3>Both automations are there, switched off</h3>
+<p>They are set to another car, 14AHU, which is the car they were made with.</p>
+<img src="img/setup/25-automations.png" alt="Automation list: When 14AHU connects and When 14AHU disconnects, both switched off" width="720" height="671" loading="lazy"></li>
+<li><h3>Tap one, then Edit</h3>
+<p>If you see "Describe a Shortcut", tap Edit at the top right.</p>
+<img src="img/setup/03-edit.png" alt="Describe a Shortcut screen with Edit ringed" width="720" height="794" loading="lazy"></li>
+<li><h3>Pick your own car</h3>
+<p>Tap the car's name, pick your car from the list, then tap the blue tick.</p>
+<img src="img/setup/05-trigger.png" alt="Bluetooth trigger with the device name and the tick ringed" width="720" height="490" loading="lazy"></li>
+<li><h3>Leave Confirm Before Run off</h3>
+<p>Tap the small arrow to check. <strong>Automation</strong> should be on and <strong>Confirm Before Run</strong> off, so it runs by itself.</p>
+<img src="img/setup/08-options.png" alt="Automation on, Confirm Before Run off" width="720" height="597" loading="lazy"></li>
+<li><h3>Do the same for the other one</h3>
+<p>Go back. Both automations should now be switched on.</p>
+<img src="img/setup/12-both.png" alt="Two automations, both switched on" width="720" height="881" loading="lazy"></li>
+</ol>
+
+<h2>3. Allow them once</h2>
+<ol class="steps">
+<li><h3>Run each shortcut once</h3>
+<p>In All Shortcuts, tap each of the two tiles. iOS asks its permission questions only on the first run. Answer them now, or the automation stops to ask while you are walking away from the car.</p>
 <img src="img/setup/23-shortcuts.png" alt="The two shortcuts, Car Connect and Car disconnected (I parked), in Shortcuts" width="720" height="496" loading="lazy"></li>
 <li><h3>Allow location for the parked one</h3>
 <p>Choose <strong>Allow While Using App</strong>. This is the Shortcuts app's permission, not ParkSG's.</p>
@@ -33,59 +70,41 @@
 <img src="img/setup/22-allow-parksg.png" alt="Shortcuts asking whether Car disconnected (I parked) may run actions from ParkSG, with Allow ringed" width="720" height="278" loading="lazy"></li>
 </ol>
 
-<h2>Automation 1: when you park</h2>
+<h2>Or make them by hand, without the links</h2>
 <ol class="steps">
-<li><h3>Open Shortcuts and tap Automation</h3>
-<p>If Shortcuts opens on another screen, tap back until you see Library.</p>
-<img src="img/setup/01-library.png" alt="Shortcuts Library with the Automation row highlighted" width="720" height="782" loading="lazy"></li>
-<li><h3>Tap + at the bottom</h3>
-<img src="img/setup/02-plus.png" alt="The plus button at the bottom of the Automation screen" width="720" height="521" loading="lazy"></li>
-<li><h3>If you see "Describe a Shortcut", tap Edit</h3>
-<p>This skips the describe screen and opens the editor. If you land in the editor straight away, carry on.</p>
-<img src="img/setup/03-edit.png" alt="Describe a Shortcut screen with the Edit button highlighted" width="720" height="794" loading="lazy"></li>
-<li><h3>Tap the Automation chip, then Bluetooth</h3>
-<p>The chips sit under the Search field at the bottom. Bluetooth is under Connectivity.</p>
-<img src="img/setup/04-bluetooth.png" alt="Trigger list with Bluetooth highlighted under Connectivity" width="720" height="1045" loading="lazy"></li>
-<li><h3>Tap Any Device and pick your car</h3>
-<p>You get a card that reads "When Any Device is Connected". Tap <strong>Any Device</strong>, choose your car from the list, then tap the blue tick.</p>
-<img src="img/setup/05-trigger.png" alt="Trigger card: When Any Device is Connected" width="720" height="490" loading="lazy">
-<img src="img/setup/06-devices.png" alt="Devices list with a tick to confirm" width="720" height="388" loading="lazy">
-<p class="muted">Your car's name appears in this list on your iPhone. Pick it, so headphones and speakers don't start a parking session.</p></li>
-<li><h3>Tap Connected and change it to Disconnected</h3>
-<img src="img/setup/07-menu.png" alt="Menu with Connected, Disconnected, Connected or Disconnected" width="720" height="716" loading="lazy"></li>
+<li><h3>Open Automation and tap +</h3>
+<p>In Shortcuts, tap Automation, then + at the bottom.</p>
+<img src="img/setup/02-plus.png" alt="Automation screen with the plus button ringed" width="720" height="521" loading="lazy"></li>
+<li><h3>Tap Edit</h3>
+<p>If you see "Describe a Shortcut", tap Edit.</p>
+<img src="img/setup/03-edit.png" alt="Describe a Shortcut screen with Edit ringed" width="720" height="794" loading="lazy"></li>
+<li><h3>Choose Bluetooth</h3>
+<p>Tap the Automation chip under Search, then Bluetooth.</p>
+<img src="img/setup/04-bluetooth.png" alt="Trigger list with Bluetooth ringed" width="720" height="1045" loading="lazy"></li>
+<li><h3>Pick your car</h3>
+<p>Tap Any Device, pick your car, then tap the blue tick.</p>
+<img src="img/setup/05-trigger.png" alt="Bluetooth trigger with the device and the tick ringed" width="720" height="490" loading="lazy"></li>
+<li><h3>Change Connected to Disconnected</h3>
+<p>Tap Connected and choose Disconnected.</p>
+<img src="img/setup/07-menu.png" alt="Menu with Disconnected ringed" width="720" height="716" loading="lazy"></li>
 <li><h3>Leave Confirm Before Run off</h3>
-<p>Tap the small arrow next to Disconnected to check. <strong>Automation</strong> should be on and <strong>Confirm Before Run</strong> off, so it runs by itself.</p>
+<p>Tap the small arrow to check that Automation is on and Confirm Before Run is off.</p>
 <img src="img/setup/08-options.png" alt="Automation on, Confirm Before Run off" width="720" height="597" loading="lazy"></li>
-<li><h3>Search for Car and choose your shortcut "Car disconnected (I parked)"</h3>
-<p>Tap the Search field at the bottom and type Car. Pick the shortcut you added.</p>
-<img src="img/setup/09-search.png" alt="Search results with Car disconnected (I parked) highlighted" width="720" height="663" loading="lazy"></li>
-<li><h3>Tap back to save</h3>
-<p>The automation should look like this. There is no Save button; tapping the back arrow keeps it.</p>
-<img src="img/setup/10-parked.png" alt="Finished automation: When your car is Disconnected, Car disconnected (I parked)" width="720" height="752" loading="lazy"></li>
+<li><h3>Add the ParkSG action</h3>
+<p>In Search, type ParkSG and choose "Car disconnected (I parked)". Tap <strong>Location</strong> on it and choose <strong>Current Location</strong>.</p>
+<img src="img/setup/09-search.png" alt="Search results with Car disconnected (I parked) ringed" width="720" height="663" loading="lazy"></li>
+<li><h3>Save, then make the second one</h3>
+<p>Tap back to save. Make a second automation the same way, left on Connected, with "Car connected (I&#39;m leaving)".</p>
+<img src="img/setup/11-leaving.png" alt="Finished automation: When your car is Connected, Car connected (I&#39;m leaving)" width="720" height="573" loading="lazy"></li>
 </ol>
+</details>
 
-<h2>Automation 2: when you leave</h2>
-<ol class="steps">
-<li><h3>Tap + again and repeat steps 3 to 5</h3>
-<p>Edit, Automation chip, Bluetooth, then pick your car.</p></li>
-<li><h3>Leave it on Connected</h3>
-<p>This time don't change the state.</p></li>
-<li><h3>Search for Car and choose your shortcut "Car Connect"</h3>
-<img src="img/setup/11-leaving.png" alt="Finished automation: When your car is Connected, Car connected (I'm leaving)" width="720" height="573" loading="lazy"></li>
-<li><h3>Tap back. You should now have two automations</h3>
-<p>Both switches should be green. Your car's name shows in place of "any Bluetooth device".</p>
-<img src="img/setup/12-both.png" alt="Automation list with both ParkSG automations switched on" width="720" height="881" loading="lazy"></li>
-</ol>
-
-<h2>Check it works</h2>
-<p>Take a short drive and park at any public carpark. When you switch the car off, your Lock Screen should ask "Parked?" within a minute. When you get back in and the phone connects, the session ends with the fare.</p>
 <p>In ParkSG, open Settings. <strong>Car automation</strong> shows when each automation last ran.</p>
 
 <h2>If it doesn't run</h2>
 <ul>
 <li><strong>Shortcuts asks before running.</strong> Open the automation, tap the arrow next to Connected or Disconnected, and turn off Confirm Before Run.</li>
-<li><strong>Nothing happens.</strong> Check both switches in the Automation list are green, and that you ran each shortcut once and tapped Allow. In ParkSG, Settings › Car automation › Recent runs shows what happened on each run.</li>
-<li><strong>You would rather not add the shortcuts.</strong> ParkSG's own actions of the same names work too. In the automation, search ParkSG, choose "Car disconnected (I parked)", then tap Location on it and choose Current Location. For leaving, choose "Car connected (I'm leaving)".</li>
+<li><strong>Nothing happens.</strong> Check both switches in the Automation list are green, that each is set to your own car (not 14AHU), and that you ran each shortcut once and tapped Allow. In ParkSG, Settings › Car automation › Recent runs shows what happened on each run.</li>
 <li><strong>It starts when headphones disconnect.</strong> Open the automation, tap Any Device and pick only your car.</li>
 <li><strong>Your car keeps Bluetooth on after the engine stops.</strong> Some cars hold the connection until you open the door or lock up. The timer starts then. You can adjust the start time on the parking card.</li>
 <li><strong>Older iOS (17, 18, 26).</strong> Start from the Automation tab at the bottom of Shortcuts, tap +, choose Bluetooth, pick your car and "Is Disconnected", choose <strong>Run Immediately</strong>, then add the ParkSG action.</li>
