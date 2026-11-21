@@ -15,6 +15,24 @@
 </div>
 <p class="muted">Screens are from iOS 27. On older versions the wording differs slightly; see the notes at the end.</p>
 
+<h2>First: add the two shortcuts</h2>
+<p>These are ready-made. Each holds one ParkSG action and nothing else; the parked one already has Location set to Current Location, which is how ParkSG knows where you parked with location set to While Using the App.</p>
+<p><a class="button" href="https://www.icloud.com/shortcuts/0891f797d46d455292a2072527ceced1">Add "Car disconnected (I parked)"</a> <a class="button" href="https://www.icloud.com/shortcuts/4282558258d04bdb8eb7ab5bfdafeb1b">Add "Car Connect"</a></p>
+<ol class="steps">
+<li><h3>Tap each link, then Add Shortcut</h3>
+<p>Open this page on your iPhone. Each link opens the Shortcuts app.</p>
+<img src="img/setup/20-add-shortcut.png" alt="Shortcuts showing Car disconnected (I parked) with the Add Shortcut button ringed" width="720" height="775" loading="lazy"></li>
+<li><h3>Run each one once</h3>
+<p>In Shortcuts, tap each of the two tiles. iOS asks its permission questions only on the first run. Answer them now, or the automation stops to ask while you are walking away from the car.</p>
+<img src="img/setup/23-shortcuts.png" alt="The two shortcuts, Car Connect and Car disconnected (I parked), in Shortcuts" width="720" height="496" loading="lazy"></li>
+<li><h3>Allow location for the parked one</h3>
+<p>Choose <strong>Allow While Using App</strong>. This is the Shortcuts app's permission, not ParkSG's.</p>
+<img src="img/setup/21-allow-location.png" alt="Shortcuts asking to use your location, with Allow While Using App ringed" width="720" height="562" loading="lazy"></li>
+<li><h3>Allow both to run ParkSG's actions</h3>
+<p>Tap <strong>Allow</strong>. If the test run starts a parking card, tap Not parked.</p>
+<img src="img/setup/22-allow-parksg.png" alt="Shortcuts asking whether Car disconnected (I parked) may run actions from ParkSG, with Allow ringed" width="720" height="278" loading="lazy"></li>
+</ol>
+
 <h2>Automation 1: when you park</h2>
 <ol class="steps">
 <li><h3>Open Shortcuts and tap Automation</h3>
@@ -38,13 +56,11 @@
 <li><h3>Leave Confirm Before Run off</h3>
 <p>Tap the small arrow next to Disconnected to check. <strong>Automation</strong> should be on and <strong>Confirm Before Run</strong> off, so it runs by itself.</p>
 <img src="img/setup/08-options.png" alt="Automation on, Confirm Before Run off" width="720" height="597" loading="lazy"></li>
-<li><h3>Search for ParkSG and choose "Car disconnected (I parked)"</h3>
-<p>Tap the Search field at the bottom and type ParkSG.</p>
+<li><h3>Search for Car and choose your shortcut "Car disconnected (I parked)"</h3>
+<p>Tap the Search field at the bottom and type Car. Pick the shortcut you added.</p>
 <img src="img/setup/09-search.png" alt="Search results with Car disconnected (I parked) highlighted" width="720" height="663" loading="lazy"></li>
-<li><h3>Set Location to Current Location</h3>
-<p>On the ParkSG action, tap <strong>Location</strong> and choose <strong>Current Location</strong>. Shortcuts then tells ParkSG where you parked, so ParkSG only needs location set to While Using the App. If Shortcuts asks to use your location, allow it.</p></li>
 <li><h3>Tap back to save</h3>
-<p>The automation should look like this. Your ParkSG action will also show Current Location, which this picture predates. There is no Save button; tapping the back arrow keeps it.</p>
+<p>The automation should look like this. There is no Save button; tapping the back arrow keeps it.</p>
 <img src="img/setup/10-parked.png" alt="Finished automation: When your car is Disconnected, Car disconnected (I parked)" width="720" height="752" loading="lazy"></li>
 </ol>
 
@@ -54,7 +70,7 @@
 <p>Edit, Automation chip, Bluetooth, then pick your car.</p></li>
 <li><h3>Leave it on Connected</h3>
 <p>This time don't change the state.</p></li>
-<li><h3>Search for ParkSG and choose "Car connected (I'm leaving)"</h3>
+<li><h3>Search for Car and choose your shortcut "Car Connect"</h3>
 <img src="img/setup/11-leaving.png" alt="Finished automation: When your car is Connected, Car connected (I'm leaving)" width="720" height="573" loading="lazy"></li>
 <li><h3>Tap back. You should now have two automations</h3>
 <p>Both switches should be green. Your car's name shows in place of "any Bluetooth device".</p>
@@ -68,13 +84,13 @@
 <h2>If it doesn't run</h2>
 <ul>
 <li><strong>Shortcuts asks before running.</strong> Open the automation, tap the arrow next to Connected or Disconnected, and turn off Confirm Before Run.</li>
-<li><strong>Nothing happens.</strong> Check both switches in the Automation list are green, and that the parked automation has Location set to Current Location. If you skipped that step, ParkSG needs location set to Always in the iPhone Settings app. In ParkSG, Settings › Car automation › Recent runs shows what happened on each run.</li>
-<li><strong>There is no Location field on the action.</strong> Update ParkSG, then delete the ParkSG action from the automation and add it again.</li>
+<li><strong>Nothing happens.</strong> Check both switches in the Automation list are green, and that you ran each shortcut once and tapped Allow. In ParkSG, Settings › Car automation › Recent runs shows what happened on each run.</li>
+<li><strong>You would rather not add the shortcuts.</strong> ParkSG's own actions of the same names work too. In the automation, search ParkSG, choose "Car disconnected (I parked)", then tap Location on it and choose Current Location. For leaving, choose "Car connected (I'm leaving)".</li>
 <li><strong>It starts when headphones disconnect.</strong> Open the automation, tap Any Device and pick only your car.</li>
 <li><strong>Your car keeps Bluetooth on after the engine stops.</strong> Some cars hold the connection until you open the door or lock up. The timer starts then. You can adjust the start time on the parking card.</li>
 <li><strong>Older iOS (17, 18, 26).</strong> Start from the Automation tab at the bottom of Shortcuts, tap +, choose Bluetooth, pick your car and "Is Disconnected", choose <strong>Run Immediately</strong>, then add the ParkSG action.</li>
 </ul>
-<p class="note">No car Bluetooth? You can still tap "I've parked here" on a carpark's page in ParkSG, or turn on "Detect without the automation" in ParkSG's Settings to try motion-based detection.</p>
+<p class="note">No car Bluetooth? You can still tap "I've parked here" on a carpark's page in ParkSG. To start the timer from when you drove in, set the From time on that page first.</p>
 
 <nav><a href="./">Home</a><a href="support.html">Help &amp; support</a><a href="privacy.html">Privacy policy</a></nav>
 </main></body></html>

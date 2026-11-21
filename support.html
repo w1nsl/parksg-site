@@ -10,7 +10,7 @@
 <p>You set up two automations in Apple's Shortcuts app, once. When your iPhone disconnects from your car's Bluetooth, ParkSG checks which carpark you are in. Your Lock Screen then asks "Parked?" at the nearest one, and you can change the carpark in the app if it guessed wrong. When the phone connects to the car again, the session ends. Stops away from carparks, such as home, stay silent. <a href="setup.html">Step-by-step setup guide with pictures</a>.</p>
 
 <h2>Does it need location "Always"?</h2>
-<p>No, if you set Location to Current Location on the ParkSG action in the parked automation. Shortcuts then passes your location to ParkSG, and While Using the App is enough. If you skip that step, ParkSG needs "Always" to read your location itself, because parking usually happens while the app is closed. "Always" is also needed for "Detect without the car automation". Either way, the map, rates and live lots work, and you can tap "I've parked here" yourself.</p>
+<p>No, if you set Location to Current Location on the ParkSG action in the parked automation. Shortcuts then passes your location to ParkSG, and While Using the App is enough. ParkSG never asks for "Always". If you skip that step, ParkSG can't tell where you parked and sends a notification asking you to pick the carpark. Either way, the map, rates and live lots work, and you can tap "I've parked here" yourself.</p>
 
 <h2>Is the fare exact?</h2>
 <p>It is an estimate. HDB rates come from HDB's published charges and include the 15-minute grace period, daily and night caps, and free parking on Sundays and public holidays where it applies. Mall rates come from the rates LTA lists on OneMotoring and can be out of date. The charge at the carpark is always final. If a rate looks wrong, open the carpark in ParkSG and tap "Rates wrong? Tell us".</p>
@@ -19,13 +19,13 @@
 <p>Open the parking card and tap "Wrong carpark" to choose the right one; the fare updates straight away. You can also change the start time.</p>
 
 <h2>A session ended when it shouldn't have</h2>
-<p>ParkSG ends a session when your phone connects to your own car again. If you turned on "Detect without the automation", a drive in another vehicle from where you parked can also end it; turn that off in ParkSG's Settings if it gets in the way. You can end or adjust a session from the parking card.</p>
+<p>ParkSG ends a session when your phone connects to your own car again. You can end or adjust a session from the parking card.</p>
 
 <h2>Home or season parking</h2>
-<p>While parked there, turn on "No charge here" on the parking card. ParkSG then stays quiet at that carpark.</p>
+<p>Save the place. While you are there, open ParkSG's Settings and tap "Add a place where I am now", or tap "Save this place" on the parking page. Give it a name and an icon and leave "No parking charge here" on. ParkSG then stays quiet when you park within about 200 m of it, and shows the place on the map. This works for home, a season carpark, or work or school if you have a parking pass.</p>
 
 <h2>Battery</h2>
-<p>With the car automations, ParkSG does nothing between drives: it wakes for a few seconds when your phone connects to or disconnects from the car. The optional "Detect without the automation" setting uses the motion sensor and low-power location, and GPS while you drive.</p>
+<p>With the car automations, ParkSG does nothing between drives: it wakes for a few seconds when your phone connects to or disconnects from the car. It never tracks your location in the background.</p>
 
 <h2>Turning things off</h2>
 <p>To stop parking detection, switch off the two automations in the Shortcuts app. In ParkSG, open Settings (the profile button) to turn off the Lock Screen timer. You can also change location and notification access in the iPhone Settings app.</p>
