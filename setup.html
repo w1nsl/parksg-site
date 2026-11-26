@@ -16,19 +16,19 @@
 <p class="muted">Screens are from iOS 27. On older versions the wording differs slightly; see the notes at the end.</p>
 
 <h2>The short version</h2>
-<p><a class="button" href="https://www.icloud.com/shortcuts/0891f797d46d455292a2072527ceced1">Add "Car disconnected (I parked)"</a> <a class="button" href="https://www.icloud.com/shortcuts/4282558258d04bdb8eb7ab5bfdafeb1b">Add "Car Connect"</a></p>
+<p><a class="button" href="https://www.icloud.com/shortcuts/a2bbc2c3dd6c4ef69244c85e6bd7c933">Add "Car disconnected (I parked)"</a> <a class="button" href="https://www.icloud.com/shortcuts/a46f0f35af464f22b473ecca6765fe19">Add "Car Connect"</a></p>
 <ol>
 <li>On your iPhone, tap each link above and tap <strong>Add Shortcut</strong>. Each one brings its automation with it, switched off.</li>
-<li>In Shortcuts, tap <strong>Automation</strong>. Tap each of the two, tap <strong>Edit</strong>, tap the car's name (14AHU) and pick your own car. Go back and switch it on.</li>
+<li>In Shortcuts, tap <strong>Automation</strong>. Tap each of the two, tap <strong>Edit</strong>, tap <strong>Any Device</strong> and pick your car. Go back and switch it on.</li>
 <li>Tap each of the two shortcuts once to run it and choose <strong>Allow</strong>. iOS asks only this first time.</li>
 </ol>
-<p class="note">The automations arrive set to the car they were made with, so they do nothing until you pick yours.</p>
+<p class="note">Pick your car before switching them on. Left on Any Device, they would also run when headphones connect or disconnect.</p>
 
 <details>
 <summary>Step by step with pictures</summary>
 
 <h2>1. Add the two shortcuts</h2>
-<p><a class="button" href="https://www.icloud.com/shortcuts/0891f797d46d455292a2072527ceced1">Add "Car disconnected (I parked)"</a> <a class="button" href="https://www.icloud.com/shortcuts/4282558258d04bdb8eb7ab5bfdafeb1b">Add "Car Connect"</a></p>
+<p><a class="button" href="https://www.icloud.com/shortcuts/a2bbc2c3dd6c4ef69244c85e6bd7c933">Add "Car disconnected (I parked)"</a> <a class="button" href="https://www.icloud.com/shortcuts/a46f0f35af464f22b473ecca6765fe19">Add "Car Connect"</a></p>
 <ol class="steps">
 <li><h3>Tap each link, then Add Shortcut</h3>
 <p>Open this page on your iPhone. Each link opens the Shortcuts app.</p>
@@ -41,13 +41,13 @@
 <p>In Shortcuts, go back to Library and tap Automation.</p>
 <img src="img/setup/24-library.png" alt="Shortcuts Library with the Automation row ringed" width="720" height="638" loading="lazy"></li>
 <li><h3>Both automations are there, switched off</h3>
-<p>They are set to another car, 14AHU, which is the car they were made with.</p>
-<img src="img/setup/25-automations.png" alt="Automation list: When 14AHU connects and When 14AHU disconnects, both switched off" width="720" height="671" loading="lazy"></li>
+<p>They are set to Any Device until you pick your car.</p>
+<img src="img/setup/25-automations.png" alt="Automation list: When any device connects and When any device disconnects, both switched off" width="720" height="465" loading="lazy"></li>
 <li><h3>Tap one, then Edit</h3>
 <p>If you see "Describe a Shortcut", tap Edit at the top right.</p>
 <img src="img/setup/03-edit.png" alt="Describe a Shortcut screen with Edit ringed" width="720" height="794" loading="lazy"></li>
 <li><h3>Pick your own car</h3>
-<p>Tap the car's name, pick your car from the list, then tap the blue tick.</p>
+<p>Tap Any Device, pick your car from the list, then tap the blue tick.</p>
 <img src="img/setup/05-trigger.png" alt="Bluetooth trigger with the device name and the tick ringed" width="720" height="490" loading="lazy"></li>
 <li><h3>Leave Confirm Before Run off</h3>
 <p>Tap the small arrow to check. <strong>Automation</strong> should be on and <strong>Confirm Before Run</strong> off, so it runs by itself.</p>
@@ -103,8 +103,9 @@
 
 <h2>If it doesn't run</h2>
 <ul>
+<li><strong>A Shortcuts banner appears every time.</strong> Open the automation and tap the arrow next to Connected or Disconnected. If there is a Notify When Run switch, turn it off.</li>
 <li><strong>Shortcuts asks before running.</strong> Open the automation, tap the arrow next to Connected or Disconnected, and turn off Confirm Before Run.</li>
-<li><strong>Nothing happens.</strong> Check both switches in the Automation list are green, that each is set to your own car (not 14AHU), and that you ran each shortcut once and tapped Allow. In ParkSG, Settings › Car automation › Recent runs shows what happened on each run.</li>
+<li><strong>Nothing happens.</strong> Check both switches in the Automation list are green, that each is set to your own car, and that you ran each shortcut once and tapped Allow. In ParkSG, Settings › History shows what happened on each run.</li>
 <li><strong>It starts when headphones disconnect.</strong> Open the automation, tap Any Device and pick only your car.</li>
 <li><strong>Your car keeps Bluetooth on after the engine stops.</strong> Some cars hold the connection until you open the door or lock up. The timer starts then. You can adjust the start time on the parking card.</li>
 <li><strong>Older iOS (17, 18, 26).</strong> Start from the Automation tab at the bottom of Shortcuts, tap +, choose Bluetooth, pick your car and "Is Disconnected", choose <strong>Run Immediately</strong>, then add the ParkSG action.</li>
