@@ -1,0 +1,157 @@
+/* ParkSG website: Find parking, Ask and carpark pages. The older pages keep style.css. */
+:root{
+  --bg:#F2F4F8;--card:#fff;--text:#131A2B;--muted:#505A70;--line:#E3E7EF;--field:#F2F4F8;
+  --accent:#1D5FE0;--accent-strong:#17409C;--accent-soft:#DCE7FC;--on-accent:#fff;--pill:#131A2B;--on-pill:#fff;
+  --ok:#0B6B45;--ok-soft:#D9F2E6;--no:#A32222;--no-strong:#8A1B1B;--no-soft:#FBE3E3;--unk:#8A4B00;--unk-soft:#FFF0D6;
+  --shadow:0 6px 20px rgba(20,35,80,.08);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0E1420;--card:#182132;--text:#EEF2FA;--muted:#A6B0C5;--line:#2A3550;--field:#222D44;
+  --accent:#6E9BFF;--accent-strong:#A9C4FF;--accent-soft:#1E3260;--on-accent:#0B1220;--pill:#EEF2FA;--on-pill:#131A2B;
+  --ok:#6FD6A8;--ok-soft:#113A2B;--no:#FF9B9B;--no-strong:#FFB4B4;--no-soft:#4A1B1F;--unk:#FFC774;--unk-soft:#45300F;
+  --shadow:0 6px 20px rgba(0,0,0,.35);
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent-strong)}
+button,input,textarea,select{font:inherit;color:inherit}
+button{border:0;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+h1,.brand{font-family:"Space Grotesk",Inter,sans-serif}
+h1{margin:6px 0 0;font-size:2.1rem;line-height:1.1}
+h2{margin:0 0 10px;font-size:1.15rem}
+h3{margin:14px 0 6px;font-size:1rem}
+p{margin:8px 0}
+.wrap{max-width:1200px;margin:0 auto;padding-left:24px;padding-right:24px}
+.muted{color:var(--muted)}.small{font-size:13.5px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+.topbar{background:var(--card);border-bottom:1px solid var(--line)}
+.topbar-in{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;padding-top:14px;padding-bottom:14px}
+.brand{display:flex;gap:10px;align-items:center;font-weight:700;font-size:20px;color:var(--text)}
+.brand:hover{color:var(--text)}
+.mark{width:30px;height:30px;border-radius:9px;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-size:17px}
+.topnav{display:flex;gap:22px;flex-wrap:wrap;flex:1;font-weight:500}
+.topnav a[aria-current=page]{color:var(--text);font-weight:600}
+.pill{background:var(--pill);color:var(--on-pill);border-radius:99px;padding:10px 18px;font-weight:600}
+.pill:hover{color:var(--on-pill);opacity:.9}
+
+.page{padding-top:28px;padding-bottom:28px;display:flex;flex-direction:column;gap:20px}
+.lede{color:var(--muted);max-width:62ch;margin:8px 0 0}
+.back{font-size:14.5px}
+.card{background:var(--card);border-radius:18px;padding:18px 20px}
+.cols{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start}
+.col-main{flex:3 1 420px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.col-side{flex:2 1 320px;min-width:0;display:flex;flex-direction:column;gap:20px}
+
+.btn{background:var(--accent);color:var(--on-accent);border-radius:12px;padding:0 22px;min-height:48px;font-weight:600}
+.btn:hover{background:var(--accent-strong);color:var(--on-accent)}
+.btn[disabled]{opacity:.5;cursor:default}
+.btn-plain{background:var(--card);color:var(--text);border-radius:12px;padding:12px 18px;font-weight:600}
+.chip{background:var(--field);color:var(--text);border-radius:12px;padding:0 14px;min-height:48px}
+.chip[aria-pressed=true]{background:var(--accent-soft);color:var(--accent-strong);font-weight:600}
+.chip.round{background:var(--card);border-radius:99px;min-height:44px}
+select.chip{border:0;appearance:auto}
+
+.tag{display:inline-block;border-radius:6px;padding:2px 8px;font-weight:600;font-size:13px}
+.tag.ok,.lots.has{background:var(--ok-soft);color:var(--ok)}
+.tag.no{background:var(--no-soft);color:var(--no)}
+.tag.unk{background:var(--unk-soft);color:var(--unk)}
+.lots{white-space:nowrap;font-size:14px;color:var(--muted);align-self:center}
+.lots.has{font-weight:600;border-radius:99px;padding:2px 10px}
+
+/* Who can park */
+.banner{border-radius:18px;padding:18px 20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.banner-main{flex:1 1 320px;min-width:0}
+.banner-title{font-weight:700;font-size:1.25rem}
+.banner.ok{background:var(--ok-soft)}.banner.ok .banner-title{color:var(--ok)}
+.banner.no{background:var(--no-soft)}.banner.no .banner-title{color:var(--no-strong)}
+.banner.unk{background:var(--unk-soft)}.banner.unk .banner-title{color:var(--unk)}
+.banner-meta,.banner-sub{font-size:14.5px}
+.banner-meta{opacity:.85}
+
+table.rates{width:100%;border-collapse:collapse;font-size:15px}
+table.rates th,table.rates td{text-align:left;vertical-align:top;padding:9px 0;border-top:1px solid var(--line)}
+table.rates th{font-weight:500;color:var(--muted);width:48%;padding-right:12px}
+table.rates td.free{color:var(--ok);font-weight:600}
+.src{color:var(--muted);font-size:13.5px;margin:10px 0 0}
+.freeline{font-size:14.5px}
+ul.plain{list-style:none;padding:0;margin:0}ul.plain li{padding:9px 0;border-top:1px solid var(--line)}
+
+.live{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.live .num{font-family:"Space Grotesk",Inter,sans-serif;font-size:2.2rem;font-weight:700;line-height:1}
+.chart{display:grid;grid-template-columns:repeat(24,1fr);gap:3px;align-items:end;height:120px;margin-top:8px}
+.chart .bar{background:var(--accent-soft);border-radius:3px 3px 0 0;min-height:2px}
+.chart .bar.now{background:var(--accent)}
+.chart .bar.none{background:transparent;border-bottom:2px dotted var(--line);min-height:0;height:0!important}
+.chart-axis{display:grid;grid-template-columns:repeat(24,1fr);gap:3px;font-size:11px;color:var(--muted);margin-top:4px}
+.chart-note{font-size:14.5px;margin:10px 0 0}
+.daytabs{display:flex;gap:6px;flex-wrap:wrap}
+.daytabs button{background:var(--field);border-radius:8px;padding:6px 10px;font-size:13.5px}
+.daytabs button[aria-pressed=true]{background:var(--accent-soft);color:var(--accent-strong);font-weight:600}
+
+.near-row{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding:12px 0;color:inherit}
+.near-row:hover{color:inherit}.near-row:hover b{color:var(--accent)}
+.sub{display:block;color:var(--muted);font-size:14.5px}
+
+form label{display:block;font-size:14.5px;font-weight:500;margin:12px 0 6px}
+textarea{width:100%;border:1px solid var(--line);background:var(--field);border-radius:12px;padding:10px 12px;resize:vertical}
+form .btn{width:100%;margin-top:14px}
+.form-msg{font-size:14.5px;min-height:1.2em}
+.form-msg.good{color:var(--ok)}.form-msg.bad{color:var(--no)}
+
+/* Map */
+.map{min-height:520px;border-radius:18px;overflow:hidden;background:var(--line);z-index:0}
+.map.small{min-height:280px}
+.leaflet-container{font:inherit;background:var(--line)}
+.pin{display:inline-block;transform:translate(-50%,-50%);font-weight:700;font-size:13px;line-height:1.2;padding:4px 10px;border-radius:99px;border:2px solid #fff;color:#fff;white-space:nowrap;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+.pin.ok{background:#0B6B45}.pin.no{background:#A32222}.pin.unk{background:#fff;color:#8A4B00;border-color:#8A4B00}
+.pin.num{background:#fff;color:#131A2B;border-color:#1D5FE0;font-size:14px}.pin.num.first{background:#1D5FE0;color:#fff;border:3px solid #fff}
+.pin.place{background:#131A2B;border-radius:8px;border:0;font-weight:600}
+.pin.sel{outline:3px solid #1D5FE0}
+.legend{position:absolute;left:12px;bottom:28px;z-index:500;background:rgba(255,255,255,.92);color:#131A2B;border-radius:10px;padding:8px 12px;font-size:13px;display:flex;gap:14px;flex-wrap:wrap;max-width:calc(100% - 24px)}
+.mapwrap{position:relative;flex:2 1 460px;min-width:0}
+.area-btn{position:absolute;top:12px;left:50%;transform:translateX(-50%);z-index:500;background:var(--card);color:var(--text);border-radius:99px;padding:8px 16px;font-weight:600;font-size:14px;box-shadow:var(--shadow)}
+.leaflet-popup-content{margin:12px 14px;font-size:14px}
+.leaflet-control-attribution img{vertical-align:middle}
+
+/* Find */
+.searchbar{background:var(--card);border-radius:18px;padding:10px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;box-shadow:var(--shadow)}
+.searchbar input[type=search]{flex:1 1 260px;min-width:0;border:0;background:var(--field);border-radius:12px;padding:0 16px;min-height:48px}
+.results{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.count{color:var(--muted);font-size:14px}
+.result{color:inherit;background:var(--card);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.result:hover{color:inherit;box-shadow:var(--shadow)}
+.result.sel{outline:2px solid var(--accent)}
+.result .top{display:flex;justify-content:space-between;gap:12px}
+.result .line{color:var(--muted);font-size:14.5px}
+.result .tags{display:flex;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--muted);align-items:center}
+.empty{background:var(--card);border-radius:16px;padding:18px 16px;color:var(--muted)}
+
+/* Ask */
+.chat{flex:3 1 440px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.thread{display:flex;flex-direction:column;gap:16px}
+.q{align-self:flex-end;max-width:520px;background:var(--accent);color:var(--on-accent);border-radius:18px 18px 4px 18px;padding:12px 16px;overflow-wrap:anywhere}
+.a{background:var(--card);border-radius:4px 18px 18px 18px;padding:16px 18px;display:flex;flex-direction:column;gap:12px}
+.a-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.a-card{color:inherit;background:var(--field);border-radius:14px;padding:12px 14px;display:block}
+.a-card:hover{color:inherit}.a-card.first{outline:2px solid var(--accent)}
+.a-card div{color:var(--muted);font-size:14px}.a-card .good{color:var(--ok);font-weight:600}.a-card .warn{color:var(--unk);font-weight:600}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.askbar{background:var(--card);border-radius:18px;padding:8px;display:flex;gap:8px;box-shadow:var(--shadow)}
+.askbar input{flex:1;min-width:0;border:0;background:transparent;padding:0 12px;min-height:48px}
+.notice{background:var(--unk-soft);color:var(--unk);border-radius:14px;padding:14px 16px}
+.notice b{display:block;margin-bottom:2px}
+
+.foot{color:var(--muted);font-size:13.5px;padding-top:8px;padding-bottom:40px}
+
+@media (max-width:640px){
+  .wrap{padding-left:16px;padding-right:16px}
+  h1{font-size:1.7rem}
+  .topbar-in{gap:10px 16px}.topnav{order:3;flex-basis:100%;gap:18px}.pill{margin-left:auto;padding:8px 14px;font-size:14px}
+  .map{min-height:360px}.map.small{min-height:240px}
+  .searchbar .chip,.searchbar .btn{flex:1 1 auto}
+  table.rates th{width:50%}
+  .legend{bottom:36px}
+}

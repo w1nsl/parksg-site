@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Find parking in Singapore | ParkSG</title>
+<meta name="description" content="Find a carpark in Singapore: who can park there, what it costs right now, how many lots are free, and when each fact was last checked.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="site.css"></head>
+<body>
+<div class="topbar"><div class="wrap topbar-in"><a class="brand" href="./"><span class="mark">P</span>ParkSG</a>
+<nav class="topnav" aria-label="Main"><a href="find.html" aria-current="page">Find parking</a><a href="ask.html">Ask</a><a href="support.html">Help</a></nav>
+<a class="pill" href="./">Get the iPhone app</a></div></div>
+<main class="wrap page">
+<div>
+<h1>Parking in Singapore, checked before you drive.</h1>
+<p class="lede">Every carpark says who can park there, what it costs right now, how many lots are free, and when we last checked.</p>
+</div>
+<form class="searchbar" id="search" role="search">
+<label class="sr" for="q">Where are you going?</label>
+<input id="q" type="search" name="q" placeholder="Street, block number or building, e.g. Tampines Street 81" autocomplete="off" maxlength="80">
+<button type="button" class="chip" id="f-public" aria-pressed="false">Open to public</button>
+<button type="button" class="chip" id="f-free" aria-pressed="false">Free now</button>
+<button type="button" class="chip" id="f-ev" aria-pressed="false">EV charging</button>
+<label class="sr" for="f-vehicle">Vehicle</label>
+<select class="chip" id="f-vehicle"><option value="car">Car</option><option value="moto">Motorcycle</option></select>
+<button type="button" class="chip" id="near-me">Near me</button>
+<button type="submit" class="btn">Search</button>
+</form>
+<div class="cols">
+<div class="results" id="results" aria-live="polite">
+<div class="empty">Loading carparks…</div>
+</div>
+<div class="mapwrap">
+<div class="map" id="map" aria-label="Map of carparks"></div>
+<button type="button" class="area-btn" id="area" hidden>Show carparks in this area</button>
+<div class="legend" aria-hidden="true"><span><b style="color:#0B6B45">Green</b> open, lots free</span><span><b style="color:#A32222">Red</b> not for visitors</span><span><b style="color:#8A4B00">?</b> not confirmed</span></div>
+</div>
+</div>
+<p class="muted small" id="sources">Live lots from LTA and HDB. Rates from HDB, URA and the carpark operators, each with its source and check date on the carpark's page. A carpark is only marked "Open to public" when an official source says so. Walking times are straight-line estimates. Search looks through carpark names and addresses.</p>
+</main>
+<footer class="foot wrap"><p>ParkSG is an independent app. It is not affiliated with or endorsed by HDB, URA, LTA, GovTech or Parking.sg. The charge at the carpark is always final.</p>
+<p><a href="find.html">Find parking</a> · <a href="ask.html">Ask</a> · <a href="support.html">Help &amp; support</a> · <a href="privacy.html">Privacy policy</a></p></footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+<script src="common.js" defer></script><script src="find.js" defer></script>
+</body></html>

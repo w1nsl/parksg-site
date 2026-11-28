@@ -1,4 +1,4 @@
-:root{--bg:#f2f2f7;--card:#fff;--text:#1d1d1f;--muted:#6e6e73;--accent:#2563eb;--on-accent:#fff;--line:#e5e5ea}
+:root{--bg:#f2f2f7;--card:#fff;--text:#1d1d1f;--muted:#6e6e73;--accent:#1D5FE0;--on-accent:#fff;--line:#e5e5ea}
 @media (prefers-color-scheme:dark){:root{--bg:#000;--card:#1c1c1e;--text:#f5f5f7;--muted:#a1a1a6;--accent:#8db4ff;--on-accent:#0b1220;--line:#2c2c2e}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;-webkit-text-size-adjust:100%}

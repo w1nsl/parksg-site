@@ -25,6 +25,10 @@
 <tr><td>Anonymous usage events: which features are used (for example a search, opening a carpark, answering "Parked?" or how a parking session ended), each with a fixed word or two, a random code made on your phone and the app version. Never your location, carparks, notes or anything you type</td><td>To see how ParkSG is used and whether parking detection guesses right, so we can improve it</td><td>400 days. Turn it off any time in ParkSG Settings → "Share anonymous usage"</td></tr>
 <tr><td>Rate corrections you send: your text, the carpark, the app version and your iPhone's vendor identifier for this app</td><td>To review and fix rates, and to filter spam</td><td>Until reviewed, then deleted within 90 days</td></tr>
 <tr><td>"Carpark missing?" reports you send: the carpark's name, your text, the app version, your iPhone's vendor identifier for this app, and a position for the carpark. That position is your current location only if you leave "I'm at this carpark now" switched on; otherwise it is the middle of the map</td><td>To add the carpark and its rates, and to filter spam</td><td>Until reviewed, then deleted within 90 days</td></tr>
+<tr><td>"How full is it?" answers from the Lock Screen: the carpark, one of three levels and a random code made on your phone</td><td>To show how busy a carpark usually is, mainly where there are no live lot counts</td><td>90 days; only hourly averages are kept after that</td></tr>
+<tr><td>Trip feedback you send (thumbs up, or the "What was off?" form): the carpark, the start and end time, ParkSG's estimate, the amount you say the gantry charged, a star rating, fixed-word tags, the app version and a random code made on your phone. Never your level-and-lot note or where else you went</td><td>To correct rates and check that fares are estimated properly</td><td>400 days. A gantry amount also goes into the rate corrections queue, as in the row above</td></tr>
+<tr><td>On this website, "Report a problem" on a carpark page: your text and the carpark. No device identifier</td><td>To review and fix the page</td><td>Until reviewed, then deleted within 90 days</td></tr>
+<tr><td>On this website, questions typed into Ask: the question, and a salted hash of your IP address with a count</td><td>To answer, and to limit how many questions one visitor can send</td><td>The question is not stored. The counts are deleted after 7 days</td></tr>
 </tbody></table>
 <p>None of this is linked to your name, email or Apple ID.</p>
 
@@ -33,6 +37,8 @@
 <li><b>Apple</b> delivers Lock Screen updates and notifications (Apple Push Notification service), and shows maps (MapKit) under Apple's own privacy policy.</li>
 <li><b>Supabase</b> hosts our server and database, and processes data only on our behalf.</li>
 <li>Carpark data comes from data.gov.sg, LTA DataMall and URA. ParkSG sends them nothing about you; our server fetches the data.</li>
+<li>The map on this website loads its tiles from <b>OneMap</b> (Singapore Land Authority) and its map code from the unpkg content network; both see your IP address, as any website you visit does.</li>
+<li>When Ask on this website is switched on, your question is sent to <b>Anthropic</b>, whose model reads it and writes the short answer. It is sent without your IP address or any identifier, and we ask for nothing personal in it.</li>
 <li>The street view on a carpark's page is loaded from Apple (Look Around) for that carpark's location, not yours.</li>
 </ul>
 
@@ -51,5 +57,5 @@
 
 <h2>Contact</h2>
 <p><a href="mailto:parksg.app@gmail.com">parksg.app@gmail.com</a></p>
-<nav><a href="./">Home</a><a href="support.html">Help &amp; support</a></nav>
+<nav><a href="./">Home</a><a href="find.html">Find parking</a><a href="ask.html">Ask about parking</a><a href="support.html">Help &amp; support</a></nav>
 </main></body></html>
